@@ -3,7 +3,6 @@
 namespace Devanox\Envato\Commands;
 
 use Illuminate\Database\Console\Migrations\BaseCommand;
-use Illuminate\Database\Migrations\Migrator;
 use Illuminate\Support\Collection;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -33,14 +32,13 @@ class MigrateCheckCommand extends BaseCommand
     /**
      * Create a new migration rollback command instance.
      *
-     * @param  \Illuminate\Database\Migrations\Migrator  $migrator
      * @return void
      */
-    public function __construct(Migrator $migrator)
+    public function __construct()
     {
         parent::__construct();
 
-        $this->migrator = $migrator;
+        $this->migrator = app("migrator");
     }
 
     /**
