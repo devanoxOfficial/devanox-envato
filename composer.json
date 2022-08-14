@@ -4,10 +4,8 @@
     "require": {
         "php": "^8.0.2",
         "illuminate/console": "^9.21",
-        "illuminate/support": "^9.21"
-    },
-    "conflict": {
-        "laravel/framework": "<9.24"
+        "illuminate/support": "^9.21",
+        "laravel/framework": "^9.24"
     },
     "license": "MIT",
     "autoload": {
