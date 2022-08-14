@@ -3,6 +3,7 @@
 namespace Devanox\Envato\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Devanox\Envato\Commands\PintRunCommand;
 use Devanox\Envato\Commands\MigrateCheckCommand;
 
 class DevanoxEnvatoServiceProvider extends ServiceProvider
@@ -15,7 +16,8 @@ class DevanoxEnvatoServiceProvider extends ServiceProvider
     public function register()
     {
         $this->commands([
-            MigrateCheckCommand::class
+            MigrateCheckCommand::class,
+            PintRunCommand::class,
         ]);
     }
 
