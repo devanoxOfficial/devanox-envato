@@ -14,7 +14,7 @@ class MigrateCheckCommand extends BaseCommand
      *
      * @var string
      */
-    protected $signature = 'migrate:check';
+    protected $signature = 'migrate:check {--database= : The database connection to use.} {--path= : The path of migrations files to be executed.}';
     /**
      * The console command description.
      *
@@ -38,7 +38,7 @@ class MigrateCheckCommand extends BaseCommand
     {
         parent::__construct();
 
-        $this->migrator = app("migrator");
+        $this->migrator = app('migrator');
     }
 
     /**
@@ -69,7 +69,7 @@ class MigrateCheckCommand extends BaseCommand
                 );
 
                 $this->newLine();
-                
+
                 return 1;
             } else {
                 $this->components->info('No migrations to run.');
@@ -120,21 +120,5 @@ class MigrateCheckCommand extends BaseCommand
     protected function getAllMigrationFiles()
     {
         return $this->migrator->getMigrationFiles($this->getMigrationPaths());
-    }
-
-    /**
-     * Get the console command options.
-     *
-     * @return array
-     */
-    protected function getOptions()
-    {
-        return [
-            ['database', null, InputOption::VALUE_OPTIONAL, 'The database connection to use'],
-
-            ['path', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'The path(s) to the migrations files to use'],
-
-            ['realpath', null, InputOption::VALUE_NONE, 'Indicate any provided migration file paths are pre-resolved absolute paths'],
-        ];
     }
 }
