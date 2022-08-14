@@ -51,7 +51,7 @@ class MigrateCheckCommand extends BaseCommand
             if (!$this->migrator->repositoryExists()) {
                 $this->components->error('Migration table not found.');
 
-                return 1;
+                return 2;
             }
 
             $ran = $this->migrator->getRepository()->getRan();
