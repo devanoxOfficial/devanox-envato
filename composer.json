@@ -1,0 +1,36 @@
+{
+    "name": "devanoxofficial/envato",
+    "description": "Package for laravel. This package will help Devanox to manage application and checking licencnse key and update project.",
+    "require": {
+        "php": "^8.0.2",
+        "illuminate/console": "^9.21",
+        "illuminate/support": "^9.21"
+    },
+    "conflict": {
+        "laravel/framework": "<9.24"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Devanox\\Envato\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Chetan",
+            "email": "contact@mrchetan.com"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Devanox\\Envato\\Providers\\DevanoxEnvatoServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
