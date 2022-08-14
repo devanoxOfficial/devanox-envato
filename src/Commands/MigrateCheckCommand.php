@@ -101,7 +101,7 @@ class MigrateCheckCommand extends BaseCommand
     {
         return Collection::make($this->getAllMigrationFiles())
             ->filter(function ($migration) use ($ran) {
-                return !in_array($migration, $ran);
+                return !in_array($this->migrator->getMigrationName($migration), $ran);
             })
             ->map(function ($migration) {
                 $migrationName = $this->migrator->getMigrationName($migration);
