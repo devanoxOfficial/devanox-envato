@@ -4,7 +4,6 @@ namespace Devanox\Envato\Commands;
 
 use Illuminate\Database\Console\Migrations\BaseCommand;
 use Illuminate\Support\Collection;
-use Symfony\Component\Console\Input\InputOption;
 
 class MigrateCheckCommand extends BaseCommand
 {
@@ -56,8 +55,6 @@ class MigrateCheckCommand extends BaseCommand
             }
 
             $ran = $this->migrator->getRepository()->getRan();
-
-            $batches = $this->migrator->getRepository()->getMigrationBatches();
 
             if (count($migrations = $this->getStatusFor($ran)) > 0) {
                 $this->newLine();
